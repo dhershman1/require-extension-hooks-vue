@@ -1,17 +1,17 @@
 {
   "name": "require-extension-hooks-vue",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Simple server parser for .vue files",
   "main": "src/index.js",
   "scripts": {
-    "test": "ava",
+    "test": "nyc ava --tap | tap-spec",
     "lint": "eslint src"
   },
   "ava": {
     "files": [
       "spec/**/*.spec.js"
     ],
-    "source": [
+    "sources": [
       "index.js"
     ],
     "require": [
@@ -32,24 +32,27 @@
   },
   "homepage": "https://github.com/jackmellis/require-extension-hooks-vue#readme",
   "peerDependencies": {
-    "require-extension-hooks": "^0.3.3"
+    "require-extension-hooks": "^0.3.0",
+    "vue-template-compiler": "^2.6.x"
   },
   "dependencies": {
     "@vue/component-compiler-utils": "^2.3.1",
     "consolidate": "^0.15.1",
     "postcss": "^7.0.14",
     "postcss-modules-sync": "^1.0.0",
-    "source-map-support": "^0.5.10",
-    "vue-template-compiler": "^2.6.6"
+    "source-map-support": "^0.5.10"
   },
   "devDependencies": {
+    "ava": "^1.4.1",
     "browser-env": "^3.2.5",
-    "ava": "^0.25.0",
-    "eslint": "^5.0.0",
+    "eslint": "^5.16.0",
+    "nyc": "^13.3.0",
     "pug": "^2.0.3",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
     "sinon": "^6.0.0",
-    "vue": "^2.6.6"
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "tap-spec": "^5.0.0"
   }
 }
